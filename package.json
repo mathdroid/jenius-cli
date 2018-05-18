@@ -1,0 +1,50 @@
+{
+  "name": "jenius-cli",
+  "description": "CLI helper to interact with Jenius' API",
+  "version": "0.1.0",
+  "author": " @mathdroid",
+  "bin": {
+    "jenius": "./bin/run"
+  },
+  "bugs": "https://github.com/mathdroid/jenius-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "eslint": "^4",
+    "eslint-config-oclif": "^1",
+    "globby": "^8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/mathdroid/jenius-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "jenius",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "mathdroid/jenius-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
